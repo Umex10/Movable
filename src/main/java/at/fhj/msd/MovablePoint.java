@@ -10,6 +10,11 @@ public class MovablePoint extends Movable {
     public MovablePoint(int x, int y, int xSpeed, int ySpeed) {
         this.x = x;
         this.y = y;
+
+        if (xSpeed < 0 || ySpeed < 0) {
+            throw new IllegalArgumentException("Speed must be above 0");
+        }
+
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
