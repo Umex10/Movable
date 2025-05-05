@@ -13,6 +13,10 @@ public class Vehicle extends Movable {
         this.type = type;
         this.x = x;
         this.y = y;
+
+        if (acceleration < 0 || deceleration < 0) {
+            throw new IllegalArgumentException("acceleration and deceleration can't be under 0");
+        }
         this.acceleration = acceleration;
         this.deceleration = deceleration;
     }
@@ -22,26 +26,35 @@ public class Vehicle extends Movable {
         return String.format("<%s>(%d, %d) speed=(<%d>)", this.type, this.x, this.y, this.speed);
     }
 
+    public void setSpeedZero() {
+        if (this.speed < 0) {
+            this.speed = 0;
+        }
+    }
+
+
     @Override
     public void moveUp() {
+
        this.speed += acceleration;
        this.y  += this.speed;
     }
 
     @Override
     public void moveDown() {
-        this.speed -= acceleration;
+        this.speed -= deceleration;
+        setSpeedZero();
         this.y  += this.speed;
     }
 
     @Override
     public void moveLeft() {
-        this.x += this.speed * 0.9;
+        this.x -= (int) (this.speed * 0.9);
     }
 
     @Override
     public void moveRight() {
-        this.x -= this.speed * 0.9;
+        this.x += (int) (this.speed * 0.9);
     }
     
 }
