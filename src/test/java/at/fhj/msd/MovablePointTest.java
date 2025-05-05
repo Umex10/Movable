@@ -24,16 +24,23 @@ public class MovablePointTest {
     }
 
     @Test
-    @DisplayName("Constructor IllegalArgument Test")
-    void illegalArgument() {
+    @DisplayName("Constructor IllegalArgumentY Test")
+    void illegalArgumentY() {
         assertThrows(IllegalArgumentException.class, () -> {
-
-            MovablePoint mvIllegalX = new MovablePoint(3, 2, -3, 4);
-
             MovablePoint mvIllegalY = new MovablePoint(3, 2, 3, -4);
         });
     }
 
+
+    @Test
+    @DisplayName("Constructor IllegalArgumentX Test")
+    void illegalArgumentX() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new MovablePoint(3, 2, -3, 4);
+        });
+    }
+
+  
     @Test
     @DisplayName("@Override: toString() Test")
     void toStringTest() {
