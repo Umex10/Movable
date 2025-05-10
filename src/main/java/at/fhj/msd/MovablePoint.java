@@ -40,12 +40,12 @@ public class MovablePoint extends Movable {
 
     @Override
     public void moveLeft() {
-        this.x += this.xSpeed;
+        this.x -= this.xSpeed;
     }
 
     @Override
     public void moveRight() {
-        this.x -= this.xSpeed;
+        this.x += this.xSpeed;
     }
 
 

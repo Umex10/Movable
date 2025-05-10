@@ -32,19 +32,23 @@ public class Vehicle extends Movable {
         }
     }
 
-
     @Override
     public void moveUp() {
 
-       this.speed += acceleration;
-       this.y  += this.speed;
+        this.speed += acceleration;
+        this.y += this.speed;
     }
 
     @Override
     public void moveDown() {
         this.speed -= deceleration;
         setSpeedZero();
-        this.y  += this.speed;
+        this.y += this.speed;
+    }
+
+    @Override
+    public void moveRight() {
+        this.x += (int) (this.speed * 0.9);
     }
 
     @Override
@@ -52,9 +56,4 @@ public class Vehicle extends Movable {
         this.x -= (int) (this.speed * 0.9);
     }
 
-    @Override
-    public void moveRight() {
-        this.x += (int) (this.speed * 0.9);
-    }
-    
 }
