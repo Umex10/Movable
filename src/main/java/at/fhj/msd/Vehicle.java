@@ -1,18 +1,16 @@
 package at.fhj.msd;
 
-public class Vehicle extends Movable {
+public class Vehicle extends Punkt implements Movable {
 
     protected String type;
-    protected int x;
-    protected int y;
     protected int speed = 0;
     protected int acceleration;
     protected int deceleration;
 
     public Vehicle(String type, int x, int y, int acceleration, int deceleration) {
+        super(x, y);
+
         this.type = type;
-        this.x = x;
-        this.y = y;
 
         if (acceleration < 0 || deceleration < 0) {
             throw new IllegalArgumentException("acceleration and deceleration can't be under 0");

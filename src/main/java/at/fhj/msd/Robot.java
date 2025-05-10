@@ -1,17 +1,14 @@
 package at.fhj.msd;
 
-public class Robot extends Movable {
+public class Robot extends Punkt implements Movable {
 
     protected static int count = 1;
     protected int id;
-    protected int x;
-    protected int y;
     protected int stepSize;
 
     public Robot(int x, int y, int stepSize) {
 
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.stepSize = stepSize;
         this.id = count++;
         

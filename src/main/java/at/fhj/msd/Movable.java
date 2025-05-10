@@ -1,13 +1,13 @@
 package at.fhj.msd;
 
-public abstract class Movable {
+public interface Movable {
 
-    public void moveUp() {}
+    public void moveUp();
 
-    public void moveDown() {}
+    public void moveDown(); 
 
-    public void moveLeft() {}
+    public void moveLeft(); 
 
-    public void moveRight() {}
+    public void moveRight(); 
     
 }

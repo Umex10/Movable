@@ -1,15 +1,12 @@
 package at.fhj.msd;
 
-public class MovablePoint extends Movable {
+public class MovablePoint extends Punkt implements Movable {
 
-    protected int x;
-    protected int y;
     protected int xSpeed;
     protected int ySpeed;
 
     public MovablePoint(int x, int y, int xSpeed, int ySpeed) {
-        this.x = x;
-        this.y = y;
+        super(x, y);
 
         if (xSpeed < 0 || ySpeed < 0) {
             throw new IllegalArgumentException("Speed must be above 0");
@@ -20,14 +17,12 @@ public class MovablePoint extends Movable {
     }
 
     //? Override toString()
-
     @Override
     public String toString() {
-       return String.format("(%d, %d) speed=(%d, %d)", this.x, this.y, this.xSpeed, this.ySpeed);
+        return String.format("(%d, %d) speed=(%d, %d)", this.x, this.y, this.xSpeed, this.ySpeed);
     }
 
     //? Override move-Methods from abstract class Movable
-
     @Override
     public void moveUp() {
         this.y += this.ySpeed;
@@ -47,6 +42,5 @@ public class MovablePoint extends Movable {
     public void moveRight() {
         this.x += this.xSpeed;
     }
-
 
 }

@@ -65,13 +65,13 @@ public class MovablePointTest {
     @DisplayName("Override: moveLeft() Test")
     void moveLeftTest() {
         mv.moveLeft();
-        assertEquals(7, mv.x);
+        assertEquals(1, mv.x);
     }
 
     @Test
     @DisplayName("Override: moveRight() Test")
     void moveRightTest() {
         mv.moveRight();
-        assertEquals(1, mv.x);
+        assertEquals(7, mv.x);
     }
 }
